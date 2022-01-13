@@ -41,9 +41,9 @@ class HomeFragment : Fragment() {
         current = root.image_home_disc
         current.setColorFilter(ContextCompat.getColor(requireContext(), R.color.primaryLightColor))
 
-        root.image_home_search.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_homeSearchFragment)
-        }
+//        root.image_home_search.setOnClickListener {
+//            findNavController().navigate(R.id.action_navigation_home_to_homeSearchFragment)
+//        }
 
         viewPagerAdapter = ViewPagerAdapter()
 

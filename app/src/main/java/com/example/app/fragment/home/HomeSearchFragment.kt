@@ -25,13 +25,13 @@ class HomeSearchFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                findNavController().navigate(R.id.action_homeSearchFragment_to_navigation_home)
-            }
-        }
-
-        requireActivity().onBackPressedDispatcher.addCallback(callback)
+//        val callback = object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                findNavController().navigate(R.id.action_homeSearchFragment_to_navigation_home)
+//            }
+//        }
+//
+//        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     override fun onCreateView(

@@ -1,0 +1,41 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <PreferenceCategory android:title="@string/appearance_header">-->
+
+<!--        <SwitchPreference-->
+<!--            android:key="@string/setting_dark"-->
+<!--            android:summaryOff="@string/dark_off"-->
+<!--            android:summaryOn="@string/dark_on"-->
+<!--            android:title="@string/dark_title" />-->
+
+<!--        <ListPreference-->
+<!--            android:entries="@array/lang_array"-->
+<!--            android:entryValues="@array/lang_array"-->
+<!--            android:key="@string/setting_lang"-->
+<!--            android:title="@string/lang_title" />-->
+
+<!--    </PreferenceCategory>-->
+
+    <PreferenceCategory android:title="@string/settings_info_title">
+
+<!--        <Preference-->
+<!--            android:key="@string/github_key"-->
+<!--            android:title="@string/github" />-->
+
+        <Preference
+            android:key="@string/App_version"
+            android:title="@string/setting_version_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/title_account">
+
+
+        <Preference
+            android:key="@string/setting_account"
+            android:title="@string/account_header"
+            android:summary="@string/account_off" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
