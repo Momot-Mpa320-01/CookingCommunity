@@ -1,3 +1,248 @@
 <resources>
-    <string name="app_name">CookingCommunity</string>
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">648008085898234</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb648008085898234</string>
+
+    <string name="app_name" translatable="false">Cook community</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
+
+    <!-- General -->
+    <string name="anonymous">Anonymous</string>
+    <string name="text_type">Type:</string>
+    <string name="text_diet">Diet:</string>
+    <string name="text_time">Time:</string>
+    <string name="text_price">Price:</string>
+    <string name="image_time">Time image</string>
+    <string name="image_price">Price image</string>
+    <string name="image_fav">Like image</string>
+    <string name="toast_welcome">Welcome to Cook community!</string>
+    <string name="account_edit">Edit account</string>
+    <string name="button_add_picture">Add picture</string>
+    <string name="button_delete_picture">Delete picture</string>
+    <string name="account_sub">My subscriptions</string>
+    <string name="dialog_title_ano">Anonymous connection</string>
+    <string name="dialog_message_ano">Logging in as a guest allows you to view all the recipes available on the application.\nHowever, you cannot :\n- Add a recipe\n- Subscribe to an user\n- Add recipes to your favourites\nThese actions are only available by logging in.\nWould you like to continue as a guest?\n</string>
+    <string name="text_forbid_ano">Login for this feature!</string>
+    <string name="button_ano_connection">Login</string>
+    <string name="dialog_continue_ano">Continue as a guest</string>
+    <string name="alert_impossible_title">Impossible action</string>
+    <!-- Bottom navigation menu title -->
+    <string name="title_home">Recipes</string>
+    <string name="title_add">Add</string>
+    <string name="title_account">Account</string>
+    <!-- Home -->
+    <string name="image_search">Search button</string>
+    <string name="button_filter">Filter button</string>
+    <string name="button_home_sub">Subscriptions recipe button</string>
+    <string name="button_home_disc">Discover recipes button</string>
+    <string name="button_home_fav">Your favorite recipes button</string>
+    <string name="image_recipe">Image recipe</string>
+    <string name="toast_up_to_date">You are up to date!</string>
+    <string name="text_home_sub">Subscriptions</string>
+    <string name="text_home_favorite">Favourites</string>
+    <string name="text_no_recipe">No recipes available</string>
+    <string name="dialog_unfav_title">Remove the recipe from your favourites</string>
+    <string name="dialog_unfav_message">Do you want to remove this recipe from your favourites?</string>
+    <!-- Dialog Filter -->
+    <string name="filter">Filters</string>
+    <string name="filter_news">News</string>
+    <string name="filter_fav">Top rated</string>
+    <string name="filter_cheap">Cheapest</string>
+    <string name="filter_fast">Fastest</string>
+    <string name="filter_primary">Sort by:</string>
+    <string name="filter_classic">Classic</string>
+    <string name="filter_vegan">Vegan</string>
+    <string name="filter_vegetarian">Vegetarian</string>
+    <string name="filter_starter">Starter</string>
+    <string name="filter_dish">Dish</string>
+    <string name="filter_dessert">Dessert</string>
+    <string name="filter_drink">Drink</string>
+    <!-- Recipe Page -->
+    <string name="text_fav">Like:</string>
+    <string name="text_propoced_by">Suggested by</string>
+    <string name="text_date">on %s</string>
+    <string name="text_recipe_utensils">Utensils list:</string>
+    <string name="text_recipe_ingr">Ingredients list:</string>
+    <string name="text_recipe_steps">Steps list:</string>
+    <string name="button_recipe_add_fav">Add to your favourites</string>
+    <string-array name="nb_array">
+        <item>For 1 people</item>
+        <item>For 2 people</item>
+        <item>For 3 people</item>
+        <item>For 4 people</item>
+        <item>For 5 people</item>
+        <item>For 6 people</item>
+        <item>For 7 people</item>
+        <item>For 8 people</item>
+        <item>For 9 people</item>
+        <item>For 10 people</item>
+    </string-array>
+    <string name="dialog_fav">The recipe has been added to your favourites</string>
+    <string name="alert_report_title">Report the recipe</string>
+    <string name="alert_report_message">Do you want to report this recipe for %s?</string>
+    <string name="alert_fav_message">You cannot have more than 10 recipes in your favourites.\nTip: If you want to remove a recipe from your favourites, press and hold the recipe for 3 seconds in your favourites page.</string>
+    <!-- Search Page -->
+    <string name="search_query">Look for a recipe</string>
+    <!-- Account -->
+    <string name="text_no_account">You are not sign in</string>
+    <string name="text_account_anonymous">You need to have an account to see this page</string>
+    <string name="text_account_title">Your account</string>
+    <string name="image_my_account">Your account picture</string>
+    <string name="text_account_my_recipe">My shared recipes:</string>
+    <string name="toast_no_subs">You haven\'t subscriptions</string>
+    <string name="dialog_delete_title">Delete this recipe</string>
+    <string name="dialog_delete_message">Do you want to delete this recipe?</string>
+    <!-- Fragment Account Edit -->
+    <string name="text_account_name">Account name:</string>
+    <string name="text_account_desc">Account description:</string>
+    <string name="button_account_edit_validate">Validate modifications</string>
+    <string name="account_name_false_short">Account name too short</string>
+    <string name="account_name_false_long">Account name too long</string>
+    <string name="desc_name_false_long">Description too long</string>
+    <string name="alert_account_edit_title">Confirmation</string>
+    <string name="alert_account_edit_message">Are you sure you want to ignore the changes?</string>
+    <string name="alert_account_edit_validate">Changes have been made</string>
+    <string name="error_account_edit">Error: Connection with server</string>
+    <!-- Fragment Account View -->
+    <string name="image_subs_account">Account picture</string>
+    <string name="button_subs">Subscribe</string>
+    <string name="button_unsubs">Unsubscribe</string>
+    <string name="text_view_acc_recipe">Shared recipes:</string>
+    <string name="alert_sub_toomuch_message">You cannot have more than 10 subscriptions!</string>
+    <!-- Fragment Subs View -->
+    <string name="alert_sub_message">Do you want to unsubscribe from %s?</string>
+    <!-- Settings -->
+    <string name="menu_param">Settings</string>
+    <string name="appearance_header">Theme</string>
+    <string name="setting_dark" translatable="false">setting_dark</string>
+    <string name="dark_title">Activate dark theme</string>
+    <string name="dark_off">Dark theme off</string>
+    <string name="dark_on">Dark theme on</string>
+    <string name="account_header">Sign out</string>
+    <string name="setting_account" translatable="false">setting_account</string>
+    <string name="account_on">Account name : %s</string>
+    <string name="account_off">You are already not sign</string>
+    <string name="alert_setting_account">Do you want to sign out ?</string>
+    <string name="settings_info_title">More informations</string>
+    <string name="setting_open_source" translatable="false">setting_open_source</string>
+    <string name="open_source_libraries">Open Source Libraries</string>
+    <string name="App_version" translatable="false">app_version</string>
+    <string name="setting_version_title" translatable="false">Version</string>
+    <string name="setting_eula_key">setting_eula</string>
+    <string name="setting_eula">EULA</string>
+    <string name="setting_eula_summary">End-user license agreement</string>
+    <string name="setting_contact">Contact us</string>
+    <string name="setting_contact_key" translatable="false">setting_contact_us_key</string>
+    <string name="setting_contact_summary">cook@gmail.com</string>
+    <string-array name="lang_array">
+        <item>English</item>
+        <item>Russian</item>
+    </string-array>
+    <string name="setting_lang" translatable="false">setting_lang</string>
+    <string name="lang_title">Change language</string>
+    <string name="github_key" translatable="false">github_key</string>
+    <string name="github">See the project on GitHub</string>
+    <!-- Add fragment -->
+    <string name="text_add_title">Add your recipe Step Step %d/5</string>
+    <string name="button_add_next">Next page button</string>
+    <string name="button_previous">Previous page button</string>
+    <string name="text_add_min_max">" (%d to %d):"</string>
+    <!-- fragment 1 -->
+    <string name="text_add_name">Name of your recipe:</string>
+    <string name="edit_text_add_name_hint">Example: Cookie</string>
+    <string name="add_name_false_short">Recipe name too short</string>
+    <string name="add_name_false_long">Recipe name too long</string>
+    <string name="add_name_false">Recipe name is not good</string>
+    <string-array name="time_array">
+        <item>Fast: less than 30 min</item>
+        <item>Medium: between 30 min and 1 hour</item>
+        <item>Long: more than 1 hour and 30 min</item>
+    </string-array>
+    <string-array name="price_array">
+        <item>Cheap: less than 4$</item>
+        <item>Medium: between 6$ and 8$</item>
+        <item>Expensive: more than 8$</item>
+    </string-array>
+    <string name="button_sent_data">Validate recipe button</string>
+    <!-- fragment 2 -->
+    <string name="text_add_nbP">Number of people: %d</string>
+    <string-array name="type_array">
+        <item>Starter</item>
+        <item>Dish</item>
+        <item>Dessert</item>
+        <item>Drink</item>
+    </string-array>
+    <string-array name="diet_array">
+        <item>None</item>
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+    </string-array>
+    <!-- fragment 3 -->
+    <string name="button_add_utensil">Add utensil</string>
+    <string name="dialog_title_utensil">Choose utensils needed</string>
+    <string name="text_add_utensils_list">Utensils:</string>
+    <string name="text_add_utensils_false">You need to add at least one utensil</string>
+    <string-array name="utensil_array">
+        <item>Saucepan</item>
+        <item>Frying pan</item>
+        <item>Microwave</item>
+        <item>Oven</item>
+        <item>Bowl</item>
+        <item>Flat</item>
+        <item>Salad bowl</item>
+        <item>Other</item>
+    </string-array>
+    <string name="text_add_ingredient">Ingredients</string>
+    <string name="edit_text_add_num_ingredient_hint" translatable="false">1</string>
+    <string name="edit_text_add_ingredient_hint">Example: Flour</string>
+    <string name="image_delete_ingredient">Delete current ingredient</string>
+    <string name="button_add_ingredient">Add ingredient</string>
+    <string-array name="ingredient_type_array">
+        <item>unit</item>
+        <item>g</item>
+        <item>ml</item>
+        <item>tsp</item>
+        <item>tbl</item>
+        <item>none</item>
+    </string-array>
+    <string name="text_add_ingredient_too_much">You have reach the maximum amount of ingredients</string>
+    <string name="text_add_ingredient_false">You need to add at least one ingredient</string>
+    <string name="text_add_ingredient_empty">You need to enter a ingredient name</string>
+    <string name="text_add_ingredient_num_empty">You need to enter a quantity of ingredient</string>
+    <string name="text_add_ingredient_num_zero">The quantity of ingredient must not be equal to 0</string>
+    <!-- fragment 4 -->
+    <string name="text_add_step">Steps</string>
+    <string name="button_add_step">Add Step</string>
+    <string name="image_delete_step">Delete current step</string>
+    <string name="text_add_ingredient_hint">Step %d</string>
+    <string name="text_add_step_too_much">You can\'t add more step</string>
+    <string name="text_add_step_empty">You need to add at least one step</string>
+    <string name="text_add_step_isEmpty">You need to complete all steps</string>
+    <!-- fragment 5 -->
+    <string name="text_add_picture">Picture (optional)</string>
+    <string name="image_desc_add">Recipe image</string>
+    <string name="text_add_recipe_failure">Error: The recipe can\'t be upload</string>
+    <string name="text_add_recipe_no_net">Error: Connection failure!</string>
+    <string name="text_add_recipe_failure_image">Error: Image can\'t be upload!</string>
+    <string name="text_add_recipe_anonymous">You can\'t add a recipe if you are a guest.\nPlease login in!</string>
+    <string name="dialog_add_title">Recipe has been added</string>
+    <string name="dialog_add_text">Thank you for adding your recipe!</string>
+    <string name="dialog_add_ok">Return to home</string>
+    <!-- save values -->
+    <string name="saved_add_name_key" translatable="false">name</string>
+    <string name="saved_add_time_key" translatable="false">time</string>
+    <string name="saved_add_price_key" translatable="false">price</string>
+    <string name="saved_add_number_key" translatable="false">number</string>
+    <string name="saved_add_type_key" translatable="false">type</string>
+    <string name="saved_add_diet_key" translatable="false">diet</string>
+    <string name="saved_add_utensils_key" translatable="false">utensils</string>
+    <string name="saved_add_ingredient_number_key" translatable="false">ingredient number</string>
+    <string name="saved_add_ingredients_quantity_key" translatable="false">ingredients quantity</string>
+    <string name="saved_add_ingredients_type_key" translatable="false">ingredients type</string>
+    <string name="saved_add_ingredients_name_key" translatable="false">ingredients name</string>
+    <string name="saved_add_step_number_key" translatable="false">step number</string>
+    <string name="saved_add_steps_key" translatable="false">steps</string>
+    <!-- Cloud Firestore (database) -->
+    <string name="collection_recipes" translatable="false">recipes</string>
+    <string name="collection_users" translatable="false">users</string>
 </resources>
