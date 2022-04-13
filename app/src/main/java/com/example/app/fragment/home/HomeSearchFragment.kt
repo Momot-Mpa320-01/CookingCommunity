@@ -21,23 +21,26 @@ class HomeSearchFragment : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
     private lateinit var adapter: ArrayAdapter<String>
+//    private var adapter: ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        val callback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                findNavController().navigate(R.id.action_homeSearchFragment_to_navigation_home)
-//            }
-//        }
-//
-//        requireActivity().onBackPressedDispatcher.addCallback(callback)
+
+
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().navigate(R.id.action_homeSearchFragment_to_navigation_home)
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_search, container, false)
 
@@ -48,49 +51,50 @@ class HomeSearchFragment : Fragment() {
         val recipeNames = ArrayList<String>()
 
         db.collection(getString(R.string.collection_recipes))
-                .orderBy("fav", Query.Direction.DESCENDING)
-                .get()
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        for (recipe in task.result!!) {
-                            recipe.getString("name")?.let { recipeNames.add(it) }
-                        }
-                        adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, recipeNames)
-                        root.listview_search.adapter = adapter
+            .orderBy("fav", Query.Direction.DESCENDING)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    for (recipe in task.result!!) {
+                        recipe.getString("name")?.let { recipeNames.add(it) }
                     }
+                    adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, recipeNames)
+                    root.listview_search.adapter = adapter
                 }
+            }
 
-//        root.searchview.setOnClickListener {
-//            root.searchview.isIconified = false
-//        }
+        root.searchview.setOnClickListener {
+            root.searchview.isIconified = false
+        }
 
-//        root.searchview.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
-//            override fun onQueryTextSubmit(p0: String?): Boolean {
-//                root.searchview.clearFocus()
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(p0: String?): Boolean {
+        root.searchview.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                root.searchview.clearFocus()
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
 //                adapter.filter.filter(p0)
-//                return false
-//            }
-//        })
+                adapter?.filter?.filter(p0)
+                return false
+            }
+        })
 
         root.listview_search.setOnItemClickListener { _, _, i, _ ->
             val selectedRecipe = root.listview_search.getItemAtPosition(i)
             db.collection(getString(R.string.collection_recipes))
-                    .whereEqualTo("name", selectedRecipe)
-                    .get()
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            for (recipe in task.result!!) {
-                                val model = recipe.toObject<RecipeModel>()
-                                val action = HomeSearchFragmentDirections.actionHomeSearchFragmentToRecipeFragment(model)
-                                NavHostFragment.findNavController(this).navigate(action)
-                                break
-                            }
+                .whereEqualTo("name", selectedRecipe)
+                .get()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        for (recipe in task.result!!) {
+                            val model = recipe.toObject<RecipeModel>()
+                            val action = HomeSearchFragmentDirections.actionHomeSearchFragmentToRecipeFragment(model)
+                            NavHostFragment.findNavController(this).navigate(action)
+                            break
                         }
                     }
+                }
         }
 
         return root
