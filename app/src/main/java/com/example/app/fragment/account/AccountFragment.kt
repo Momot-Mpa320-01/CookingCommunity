@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,19 +40,22 @@ class AccountFragment : Fragment() {
     private var recipeAdapter: MyRecipeAdapter? = null
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val root = if (currentUser == null || currentUser.isAnonymous)
             inflater.inflate(R.layout.fragment_account_anonymous, container, false)
-                    else
+        else
             inflater.inflate(R.layout.fragment_account, container, false)
 
         root.settings_button.setOnClickListener {
             val intent = Intent(this.context, SettingsActivity::class.java)
             startActivity(intent)
         }
+
+
+
 
         if (currentUser == null || currentUser.isAnonymous)
             loadAnonymous(root)
@@ -66,42 +70,43 @@ class AccountFragment : Fragment() {
 
         root.button_ano_connection.setOnClickListener {
             AuthUI.getInstance()
-                    .signOut(requireContext())
-                    .addOnCompleteListener {
-                        startActivity(Intent(this.context, MainActivity::class.java))
-                    }
+                .signOut(requireContext())
+                .addOnCompleteListener {
+                    startActivity(Intent(this.context, MainActivity::class.java))
+                }
         }
     }
 
     private fun loadUserData(root: View) {
         db.collection(getString(R.string.collection_users))
-                .document(currentUser!!.uid)
-                .get()
-                .addOnSuccessListener { doc ->
-                    val user = doc.toObject<UserModel>()!!
-                    setUserView(root, user, currentUser.uid)
-                }
+            .document(currentUser!!.uid)
+            .get()
+            .addOnSuccessListener { doc ->
+                val user = doc.toObject<UserModel>()!!
+                setUserView(root, user, currentUser.uid)
+            }
     }
 
     private fun setUserView(root: View, user: UserModel, uid: String) {
         root.text_account_name.text = user.name
 
-//        root.text_view_acc_desc.text = user.description
+//        root.text_view_acc_desc.text = user?.description ?: "No data";
 //        root.text_account_description.text = user.description
 //        root.text_view_acc_desc.text = user.description
 //        root.text
 
-//        root.button_account_subs.setOnClickListener {
-//            if (user.subs!!.isEmpty())
-//                Toast.makeText(context, getString(R.string.toast_no_subs), Toast.LENGTH_LONG).show()
-//            else
-//                findNavController().navigate(AccountFragmentDirections.actionNavigationAccountToAccountSubsFragment(user.subs!!.toTypedArray()))
-//        }
+        root.button_account_subs.setOnClickListener {
+            if (user.subs!!.isEmpty())
+                Toast.makeText(context, getString(R.string.toast_no_subs), Toast.LENGTH_LONG).show()
+            else
+                findNavController().navigate(AccountFragmentDirections.actionNavigationAccountToAccountSubsFragment(user.subs!!.toTypedArray()))
+        }
 
-//        root.button_acount_edit.setOnClickListener {
-//            val action = AccountFragmentDirections.actionNavigationAccountToAccountEditFragment(user, uid)
-//            findNavController().navigate(action)
-//        }
+        root.button_acount_edit.setOnClickListener {
+            val action = AccountFragmentDirections.actionNavigationAccountToAccountEditFragment(user, uid)
+            findNavController().navigate(action)
+        }
+
 
         loadImage(user.image, root.image_my_account)
 
@@ -126,12 +131,12 @@ class AccountFragment : Fragment() {
 
     private fun setUpRecyclerView(root: View, uid: String) {
         val query  = db.collection(getString(R.string.collection_recipes))
-                .whereEqualTo("uid", uid)
-                .orderBy("date", Query.Direction.DESCENDING)
+            .whereEqualTo("uid", uid)
+            .orderBy("date", Query.Direction.DESCENDING)
 
         val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
-                .setQuery(query, RecipeModel::class.java)
-                .build()
+            .setQuery(query, RecipeModel::class.java)
+            .build()
 
         recipeAdapter = MyRecipeAdapter(firestoreRecyclerOptions)
 

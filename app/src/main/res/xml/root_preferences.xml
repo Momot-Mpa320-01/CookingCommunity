@@ -1,20 +1,20 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <PreferenceCategory android:title="@string/appearance_header">-->
+    <PreferenceCategory android:title="@string/appearance_header">
 
-<!--        <SwitchPreference-->
-<!--            android:key="@string/setting_dark"-->
-<!--            android:summaryOff="@string/dark_off"-->
-<!--            android:summaryOn="@string/dark_on"-->
-<!--            android:title="@string/dark_title" />-->
+        <SwitchPreference
+            android:key="@string/setting_dark"
+            android:summaryOff="@string/dark_off"
+            android:summaryOn="@string/dark_on"
+            android:title="@string/dark_title" />
 
-<!--        <ListPreference-->
-<!--            android:entries="@array/lang_array"-->
-<!--            android:entryValues="@array/lang_array"-->
-<!--            android:key="@string/setting_lang"-->
-<!--            android:title="@string/lang_title" />-->
+        <ListPreference
+            android:entries="@array/lang_array"
+            android:entryValues="@array/lang_array"
+            android:key="@string/setting_lang"
+            android:title="@string/lang_title" />
 
-<!--    </PreferenceCategory>-->
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_info_title">
 

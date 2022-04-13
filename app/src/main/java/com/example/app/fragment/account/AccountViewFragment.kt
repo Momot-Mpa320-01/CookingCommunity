@@ -75,9 +75,9 @@ class AccountViewFragment : Fragment() {
 
     private fun initButtons(root: View, uid: String) {
         if (currentUser == null || currentUser.isAnonymous) {
-//            root.button_view_acc_sub.setOnClickListener {
-//                Toast.makeText(context, getString(R.string.text_forbid_ano), Toast.LENGTH_SHORT).show()
-//            }
+            root.button_view_acc_sub.setOnClickListener {
+                Toast.makeText(context, getString(R.string.text_forbid_ano), Toast.LENGTH_SHORT).show()
+            }
         } else {
             db.collection(getString(R.string.collection_users))
                     .document(currentUser.uid)
@@ -85,25 +85,25 @@ class AccountViewFragment : Fragment() {
                     .addOnSuccessListener { doc ->
                         val user = doc.toObject<UserModel>()!!
                         if (user.subs!!.contains(uid)) {
-//                            root.button_view_acc_sub.alpha = 0.1F
-//                            root.button_view_acc_unsub.alpha = 1F
+                            root.button_view_acc_sub.alpha = 0.1F
+                            root.button_view_acc_unsub.alpha = 1F
                         }
 
-//                        root.button_view_acc_sub.setOnClickListener {
-//                            if (user.subs!!.size < 10)
-//                                sub(root.button_view_acc_sub, root.button_view_acc_unsub, uid)
-//                            else {
-//                                AlertDialog.Builder(requireContext())
-//                                        .setTitle(getString(R.string.alert_impossible_title))
-//                                        .setMessage(getString(R.string.alert_sub_toomuch_message))
-//                                        .setPositiveButton(android.R.string.ok) { dialogInterface, _ -> dialogInterface.dismiss() }
-//                                        .show()
-//                            }
-//                        }
+                        root.button_view_acc_sub.setOnClickListener {
+                            if (user.subs!!.size < 10)
+                                sub(root.button_view_acc_sub, root.button_view_acc_unsub, uid)
+                            else {
+                                AlertDialog.Builder(requireContext())
+                                        .setTitle(getString(R.string.alert_impossible_title))
+                                        .setMessage(getString(R.string.alert_sub_toomuch_message))
+                                        .setPositiveButton(android.R.string.ok) { dialogInterface, _ -> dialogInterface.dismiss() }
+                                        .show()
+                            }
+                        }
 
-//                        root.button_view_acc_unsub.setOnClickListener {
-//                            unsub(root.button_view_acc_unsub, root.button_view_acc_sub, uid)
-//                        }
+                        root.button_view_acc_unsub.setOnClickListener {
+                            unsub(root.button_view_acc_unsub, root.button_view_acc_sub, uid)
+                        }
                     }
         }
     }

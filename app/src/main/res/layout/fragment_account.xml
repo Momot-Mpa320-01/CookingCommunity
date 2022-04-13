@@ -58,60 +58,60 @@
         app:layout_constraintStart_toEndOf="@+id/image_my_account"
         app:layout_constraintTop_toBottomOf="@+id/text_account_title" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button_account_subs"-->
-<!--        style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:background="@color/primaryColor"-->
-<!--        android:padding="4dp"-->
-<!--        android:text="@string/account_sub"-->
-<!--        android:textColor="@color/primaryTextColor"-->
-<!--        app:icon="@drawable/ic_people"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.95"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/button_acount_edit"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/image_my_account" />-->
+    <Button
+        android:id="@+id/button_account_subs"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/primaryColor"
+        android:padding="4dp"
+        android:text="@string/account_sub"
+        android:textColor="@color/primaryTextColor"
+        app:icon="@drawable/ic_people"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toEndOf="@+id/button_acount_edit"
+        app:layout_constraintTop_toBottomOf="@+id/image_my_account" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/text_account_description"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/image_my_account"-->
-<!--        tools:layout_editor_absoluteY="105dp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_account_description"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/image_my_account"-->
+    <!--        tools:layout_editor_absoluteY="105dp" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/button_acount_edit"-->
-<!--        style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@color/secondaryColor"-->
-<!--        android:padding="4dp"-->
-<!--        android:text="@string/account_edit"-->
-<!--        android:textColor="@color/primaryTextColor"-->
-<!--        app:icon="@drawable/ic_edit"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/image_my_account" />-->
+    <Button
+        android:id="@+id/button_acount_edit"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/secondaryColor"
+        android:padding="4dp"
+        android:text="@string/account_edit"
+        android:textColor="@color/primaryTextColor"
+        app:icon="@drawable/ic_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_my_account" />
 
     <TextView
         android:id="@+id/text_account_my_recipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/text_account_my_recipe"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_my_account" />
+        app:layout_constraintTop_toBottomOf="@+id/button_acount_edit" />
 
     <LinearLayout
         android:id="@+id/layout_account_recycler"

@@ -1,0 +1,259 @@
+<resources>
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">648008085898234</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb648008085898234</string>
+
+    <string name="app_name" translatable="false">Cook community</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
+
+    <!-- General -->
+    <string name="anonymous">Анонимно</string>
+    <string name="text_type">Тип:</string>
+    <string name="text_diet">Диета:</string>
+    <string name="text_time">Время:</string>
+    <string name="text_price">Цена:</string>
+    <string name="image_time">Изображение времени</string>
+    <string name="image_price">Цена изображения</string>
+    <string name="image_fav">Нравится изображение</string>
+    <string name="toast_welcome">Добро пожаловать в сообщество Cook!</string>
+    <string name="account_edit">Изменить аккаунт</string>
+    <string name="button_add_picture">Добавить изображение</string>
+    <string name="button_delete_picture">Удалить картинку</string>
+    <string name="account_sub">Мои подписки</string>
+    <string name="dialog_title_ano">Анонимное подключение</string>
+    <string name="dialog_message_ano">Вход в качестве гостя позволяет вам просматривать все рецепты, доступные в приложении.\nОднако вы не можете:\n– Добавить рецепт\n– Подписаться на пользователя\n– Добавить рецепты в ваши избранные\nЭти действия доступны только при входе в систему.\nПродолжить в качестве гостя?\n</string>
+    <string name="text_forbid_ano">Войдите для этой функции!</string>
+    <string name="button_ano_connection">Войти</string>
+    <string name="dialog_continue_ano">Продолжить как гость</string>
+    <string name="alert_impossible_title">Невозможное действие</string>
+
+
+    <!-- Bottom navigation menu title -->
+    <string name="title_home">Рецепты</string>
+    <string name="title_add">Добавить</string>
+    <string name="title_account">Учетная запись</string>
+
+    <!-- Home -->
+    <string name="image_search">Кнопка поиска</string>
+    <string name="button_filter">Кнопка фильтра</string>
+    <string name="button_home_sub">Кнопка рецепта подписки</string>
+    <string name="button_home_disc">Кнопка "Открыть рецепты"</string>
+    <string name="button_home_fav">Кнопка ваших любимых рецептов</string>
+    <string name="image_recipe">Рецепт изображения</string>
+    <string name="toast_up_to_date">Вы в курсе!</string>
+    <string name="text_home_sub">Подписки</string>
+    <string name="text_home_favorite">Избранное</string>
+    <string name="text_no_recipe">Нет доступных рецептов</string>
+    <string name="dialog_unfav_title">Удалить рецепт из избранного</string>
+    <string name="dialog_unfav_message">Удалить этот рецепт из избранного?</string>
+
+    <!-- Dialog Filter -->
+    <string name="filter">Фильтры</string>
+    <string name="filter_news">Новости</string>
+    <string name="filter_fav">С самым высоким рейтингом</string>
+    <string name="filter_cheap">Самый дешевый</string>
+    <string name="filter_fast">Самый быстрый</string>
+    <string name="filter_primary">Сортировать по:</string>
+    <string name="filter_classic">Классический</string>
+    <string name="filter_vegan">Веганский</string>
+    <string name="filter_vegetarian">Вегетарианская</string>
+    <string name="filter_starter">Начало</string>
+    <string name="filter_dish">Блюдо</string>
+    <string name="filter_dessert">Десерт</string>
+    <string name="filter_drink">Пить</string>
+
+    <!-- Recipe Page -->
+    <string name="text_fav">Нравится:</string>
+    <string name="text_propoced_by">Предложено</string>
+    <string name="text_date">в %s</string>
+    <string name="text_recipe_utensils">Список посуды:</string>
+    <string name="text_recipe_ingr">Список ингредиентов:</string>
+    <string name="text_recipe_steps">Список шагов:</string>
+    <string name="button_recipe_add_fav">Добавить в избранное</string>
+    <string-array name="nb_array">
+        <item>Для 1 человека</item>
+        <item>Для 2 человек</item>
+        <item>Для 3 человек</item>
+        <item>Для 4 человек</item>
+        <item>Для 5 человек</item>
+        <item>Для 6 человек</item>
+        <item>Для 7 человек</item>
+        <item>Для 8 человек</item>
+        <item>Для 9 человек</item>
+        <item>Для 10 человек</item>
+    </string-array>
+    <string name="dialog_fav">Рецепт добавлен в избранное</string>
+    <string name="alert_report_title">Сообщить о рецепте</string>
+    <string name="alert_report_message">Вы хотите сообщить об этом рецепте для %s?</string>
+    <string name="alert_fav_message">У вас не может быть более 10 рецептов в избранном.\nСовет: если вы хотите удалить рецепт из избранного, нажмите и удерживайте рецепт в течение 3 секунд на странице избранного.</string>
+
+    <!-- Search Page -->
+    <string name="search_query">Поиск рецепта</string>
+
+    <!-- Account -->
+    <string name="text_no_account">Вы не вошли в систему</string>
+    <string name="text_account_anonymous">Для просмотра этой страницы вам необходимо иметь учетную запись</string>
+    <string name="text_account_title">Ваша учетная запись</string>
+    <string name="image_my_account">Изображение вашего аккаунта</string>
+    <string name="text_account_my_recipe">Мои общие рецепты:</string>
+    <string name="toast_no_subs">У вас нет подписки</string>
+    <string name="dialog_delete_title">Удалить этот рецепт</string>
+    <string name="dialog_delete_message">Удалить этот рецепт?</string>
+    <!-- Fragment Account Edit -->
+    <string name="text_account_name">Имя учетной записи:</string>
+    <string name="text_account_desc">Описание учетной записи:</string>
+    <string name="button_account_edit_validate">Подтвердить изменения</string>
+    <string name="account_name_false_short">Слишком короткое имя учетной записи</string>
+    <string name="account_name_false_long">Слишком длинное имя учетной записи</string>
+    <string name="desc_name_false_long">Описание слишком длинное</string>
+    <string name="alert_account_edit_title">Подтверждение</string>
+    <string name="alert_account_edit_message">Вы уверены, что хотите игнорировать изменения?</string>
+    <string name="alert_account_edit_validate">Внесены изменения</string>
+    <string name="error_account_edit">Ошибка: соединение с сервером</string>
+    <!-- Fragment Account View -->
+    <string name="image_subs_account">Изображение аккаунта</string>
+    <string name="button_subs">Подписаться</string>
+    <string name="button_unsubs">Отменить подписку</string>
+    <string name="text_view_acc_recipe">Общие рецепты:</string>
+    <string name="alert_sub_toomuch_message">Вы не можете иметь более 10 подписок!</string>
+    <!-- Fragment Subs View -->
+    <string name="alert_sub_message">Вы хотите отказаться от подписки на %s?</string>
+
+    <!-- Settings -->
+    <string name="menu_param">Настройки</string>
+    <string name="appearance_header">Тема</string>
+    <string name="setting_dark" translatable="false">setting_dark</string>
+    <string name="dark_title">Активировать темную тему</string>
+    <string name="dark_off">Темная тема отключена</string>
+    <string name="dark_on">Темная тема включена</string>
+    <string name="account_header">Выйти</string>
+    <string name="setting_account" translatable="false">setting_account</string>
+    <string name="account_on">Имя учетной записи: %s</string>
+    <string name="account_off">Вы уже не подписаны</string>
+    <string name="alert_setting_account">Вы хотите выйти?</string>
+    <string name="settings_info_title">Дополнительная информация</string>
+    <string name="setting_open_source" translatable="false">setting_open_source</string>
+    <string name="open_source_libraries">Библиотеки с открытым исходным кодом</string>
+    <string name="App_version" translatable="false">версия_приложения</string>
+    <string name="setting_version_title" translatable="false">Версия</string>
+    <string name="setting_eula_key">setting_eula</string>
+    <string name="setting_eula">ЛСКП</string>
+    <string name="setting_eula_summary">Лицензионное соглашение с конечным пользователем</string>
+    <string name="setting_contact">Свяжитесь с нами</string>
+    <string name="setting_contact_key" translatable="false">setting_contact_us_key</string>
+    <string name="setting_contact_summary">cook@gmail.com</string>
+    <string-array name="lang_array">
+        <item>English</item>
+        <item>Russian</item>
+    </string-array>
+    <string name="setting_lang" translatable="false">setting_lang</string>
+    <string name="lang_title">Изменить язык</string>
+    <string name="github_key" translatable="false">github_key</string>
+    <string name="github">Посмотреть проект на GitHub</string>
+
+    <!-- Add fragment -->
+    <string name="text_add_title">Добавьте свой рецепт Шаг Шаг %d/5</string>
+    <string name="button_add_next">Кнопка перехода на следующую страницу</string>
+    <string name="button_previous">Кнопка перехода на предыдущую страницу</string>
+    <string name="text_add_min_max">" (от %d до %d):"</string>
+    <!-- fragment 1 -->
+    <string name="text_add_name">Название вашего рецепта:</string>
+    <string name="edit_text_add_name_hint">Пример: файл cookie</string>
+    <string name="add_name_false_short">Слишком короткое название рецепта</string>
+    <string name="add_name_false_long">Слишком длинное название рецепта</string>
+    <string name="add_name_false">Неверное название рецепта</string>
+    <string-array name="time_array">
+        <item>Быстро: менее 30 минут</item>
+        <item>Средний: от 30 минут до 1 часа</item>
+        <item>Долго: более 1 часа 30 минут</item>
+    </string-array>
+    <string-array name="price_array">
+        <item>Дешево: менее 4$</item>
+        <item>Средний: от 6$ до 8$</item>
+        <item>Дорого: более 8$</item>
+    </string-array>
+    <string name="button_sent_data">Кнопка проверки рецепта</string>
+    <!-- fragment 2 -->
+    <string name="text_add_nbP">Количество человек: %d</string>
+    <string-array name="type_array">
+        <item>Стартер</item>
+        <item>Блюдо</item>
+        <item>Десерт</item>
+        <item>Выпить</item>
+    </string-array>
+    <string-array name="diet_array">
+        <item>Нет</item>
+        <item>Вегетарианская</item>
+        <item>Веганский</item>
+    </string-array>
+    <!-- fragment 3 -->
+    <string name="button_add_utensil">Добавить посуду</string>
+    <string name="dialog_title_utensil">Выберите необходимую посуду</string>
+    <string name="text_add_utensils_list">Посуда:</string>
+    <string name="text_add_utensils_false">Вам нужно добавить хотя бы одну посуду</string>
+    <string-array name="utensil_array">
+        <item>Кастрюля</item>
+        <item>Сковорода</item>
+        <item>Микроволновая печь</item>
+        <item>Печь</item>
+        <item>Чаша</item>
+        <item>Квартира</item>
+        <item>Салатница</item>
+        <item>Другое</item>
+    </string-array>
+    <string name="text_add_ingredient">Ингредиенты</string>
+    <string name="edit_text_add_num_ingredient_hint" translatable="false">1</string>
+    <string name="edit_text_add_ingredient_hint">Пример: мука</string>
+    <string name="image_delete_ingredient">Удалить текущий ингредиент</string>
+    <string name="button_add_ingredient">Добавить ингредиент</string>
+    <string-array name="ingredient_type_array">
+        <item>единица</item>
+        <item>г</item>
+        <item>мл</item>
+        <item>чайная ложка</item>
+        <item>таблица</item>
+        <item>нет</item>
+    </string-array>
+    <string name="text_add_ingredient_too_much">Вы достигли максимального количества ингредиентов</string>
+    <string name="text_add_ingredient_false">Вам нужно добавить хотя бы один ингредиент</string>
+    <string name="text_add_ingredient_empty">Вам нужно ввести название ингредиента</string>
+    <string name="text_add_ingredient_num_empty">Вам нужно ввести количество ингредиентов</string>
+    <string name="text_add_ingredient_num_zero">Количество ингредиентов не должно быть равно 0</string>
+    <!-- fragment 4 -->
+    <string name="text_add_step">Шаги</string>
+    <string name="button_add_step">Добавить шаг</string>
+    <string name="image_delete_step">Удалить текущий шаг</string>
+    <string name="text_add_ingredient_hint">Шаг %d</string>
+    <string name="text_add_step_too_much">Вы не можете добавить больше шагов</string>
+    <string name="text_add_step_empty">Вам нужно добавить хотя бы один шаг</string>
+    <string name="text_add_step_isEmpty">Вы должны выполнить все шаги</string>
+    <!-- fragment 5 -->
+    <string name="text_add_picture">Изображение (необязательно)</string>
+    <string name="image_desc_add">Изображение рецепта</string>
+    <string name="text_add_recipe_failure">Ошибка: рецепт не может быть загружен</string>
+    <string name="text_add_recipe_no_net">Ошибка: сбой подключения!</string>
+    <string name="text_add_recipe_failure_image">Ошибка: невозможно загрузить изображение!</string>
+    <string name="text_add_recipe_anonymous">Вы не можете добавить рецепт, если вы гость.\nПожалуйста, войдите в систему!</string>
+    <string name="dialog_add_title">Рецепт добавлен</string>
+    <string name="dialog_add_text">Спасибо, что добавили рецепт!</string>
+    <string name="dialog_add_ok">Вернуться домой</string>
+
+    <!-- save values -->
+    <string name="saved_add_name_key" translatable="false">имя</string>
+    <string name="saved_add_time_key" translatable="false">время</string>
+    <string name="saved_add_price_key" translatable="false">цена</string>
+    <string name="saved_add_number_key" translatable="false">номер</string>
+    <string name="saved_add_type_key" translatable="false">тип</string>
+    <string name="saved_add_diet_key" translatable="false">диета</string>
+    <string name="saved_add_utensils_key" translatable="false">посуда</string>
+    <string name="saved_add_ingredient_number_key" translatable="false">номер ингредиента</string>
+    <string name="saved_add_ingredients_quantity_key" translatable="false">количество ингредиентов</string>
+    <string name="saved_add_ingredients_type_key" translatable="false">тип ингредиентов</string>
+    <string name="saved_add_ingredients_name_key" translatable="false">название ингредиентов</string>
+    <string name="saved_add_step_number_key" translatable="false">номер шага</string>
+    <string name="saved_add_steps_key" translatable="false">шагов</string>
+
+    <!-- Cloud Firestore (database) -->
+    <string name="collection_recipes" translatable="false">recipes</string>
+    <string name="collection_users" translatable="false">users</string>
+</resources>

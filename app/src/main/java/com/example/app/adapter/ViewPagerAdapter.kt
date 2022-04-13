@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,13 +33,13 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
     inner class Pager2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemSwipe: SwipeRefreshLayout = itemView.findViewById(R.id.home_swipeRefreshLayout)
         val itemRecycler: RecyclerView = itemView.findViewById(R.id.home_recyclerView)
-//        val itemFabFilter: FloatingActionButton = itemView.findViewById(R.id.fab_filter)
+        val itemFabFilter: FloatingActionButton = itemView.findViewById(R.id.fab_filter)
         val itemText: TextView = itemView.findViewById(R.id.text_slide)
     }
 
     override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
+        parent: ViewGroup,
+        viewType: Int
     ): Pager2ViewHolder {
         return Pager2ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_swipe_home, parent, false))
     }
@@ -56,7 +57,7 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
 
         when (position) {
             0 -> {
-//                loadSubsPage(holder)
+                loadSubsPage(holder)
             }
             1 -> {
                 loadHomePage(holder)
@@ -69,50 +70,51 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
         holder.itemSwipe.isRefreshing = false
     }
 
-//    private fun loadSubsPage(holder: Pager2ViewHolder) {
-//        if (currentUser == null || currentUser.isAnonymous) {noRecipe(holder)
-//            holder.itemText.text = holder.itemText.context.getString(R.string.text_forbid_ano)
-//        } else {
-//            db.collection("users")
-//                    .document(currentUser.uid)
-//                    .get()
-//                    .addOnSuccessListener { doc ->
-//                        val user = doc.toObject<UserModel>()!!
-//                        if (user.subs!!.isEmpty()) {
-//                            noRecipe(holder)
-//                        } else {
-//                            val query = collectionReference.orderBy("date", Query.Direction.DESCENDING)
-//                                    .whereIn("uid", user.subs!!)
-//                            val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
-//                                    .setQuery(query, RecipeModel::class.java)
-//                                    .build()
-//
-//                            setSwipe(holder, firestoreRecyclerOptions)
-//
-////                            holder.itemFabFilter.setOnClickListener {
-////                                generateFilterDialog(holder, collectionReference.whereIn("uid", user.subs!!))
-////                            }
-//
-//                            recipeAdapter = HomeRecipeAdapter(firestoreRecyclerOptions)
-//                            holder.itemRecycler.layoutManager = GridLayoutManager(holder.itemRecycler.context, 2, LinearLayoutManager.VERTICAL, false)
-//                            holder.itemRecycler.adapter = recipeAdapter
-//                            recipeAdapter!!.startListening()
-//                        }
-//                    }
-//        }
-//    }
+    private fun loadSubsPage(holder: Pager2ViewHolder) {
+        if (currentUser == null || currentUser.isAnonymous) {
+            noRecipe(holder)
+            holder.itemText.text = holder.itemText.context.getString(R.string.text_forbid_ano)
+        } else {
+            db.collection("users")
+                .document(currentUser.uid)
+                .get()
+                .addOnSuccessListener { doc ->
+                    val user = doc.toObject<UserModel>()!!
+                    if (user.subs!!.isEmpty()) {
+                        noRecipe(holder)
+                    } else {
+                        val query = collectionReference.orderBy("date", Query.Direction.DESCENDING)
+                            .whereIn("uid", user.subs!!)
+                        val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
+                            .setQuery(query, RecipeModel::class.java)
+                            .build()
+
+                        setSwipe(holder, firestoreRecyclerOptions)
+
+                        holder.itemFabFilter.setOnClickListener {
+                            generateFilterDialog(holder, collectionReference.whereIn("uid", user.subs!!))
+                        }
+
+                        recipeAdapter = HomeRecipeAdapter(firestoreRecyclerOptions)
+                        holder.itemRecycler.layoutManager = GridLayoutManager(holder.itemRecycler.context, 2, LinearLayoutManager.VERTICAL, false)
+                        holder.itemRecycler.adapter = recipeAdapter
+                        recipeAdapter!!.startListening()
+                    }
+                }
+        }
+    }
 
     private fun loadHomePage(holder: Pager2ViewHolder) {
         val query = collectionReference.orderBy("date", Query.Direction.DESCENDING)
         val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
-                .setQuery(query, RecipeModel::class.java)
-                .build()
+            .setQuery(query, RecipeModel::class.java)
+            .build()
 
         setSwipe(holder, firestoreRecyclerOptions)
 
-//        holder.itemFabFilter.setOnClickListener {
-//            generateFilterDialog(holder, collectionReference)
-//        }
+        holder.itemFabFilter.setOnClickListener {
+            generateFilterDialog(holder, collectionReference)
+        }
 
         recipeAdapter = HomeRecipeAdapter(firestoreRecyclerOptions)
         holder.itemRecycler.layoutManager = GridLayoutManager(holder.itemRecycler.context, 2, LinearLayoutManager.VERTICAL, false)
@@ -122,69 +124,71 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
 
     private fun loadFavPage(holder: Pager2ViewHolder) {
         if (currentUser == null || currentUser.isAnonymous) {
-//            noRecipe(holder)
+            noRecipe(holder)
             holder.itemText.text = holder.itemText.context.getString(R.string.text_forbid_ano)
         } else {
             db.collection("users")
-                    .document(currentUser.uid)
-                    .get()
-                    .addOnSuccessListener { doc ->
-                        val user = doc.toObject<UserModel>()!!
-                        if (user.favorites!!.isEmpty()) {
-//                            noRecipe(holder)
-                        } else {
-                            val query = collectionReference.orderBy("date", Query.Direction.DESCENDING)
-                                    .whereIn("__name__", user.favorites!!)
-                            val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
-                                    .setQuery(query, RecipeModel::class.java)
-                                    .build()
+                .document(currentUser.uid)
+                .get()
+                .addOnSuccessListener { doc ->
+                    val user = doc.toObject<UserModel>()!!
+                    if (user.favorites!!.isEmpty()) {
+                        noRecipe(holder)
+                    } else {
+                        val query = collectionReference.orderBy("date", Query.Direction.DESCENDING)
+                            .whereIn("__name__", user.favorites!!)
+                        val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
+                            .setQuery(query, RecipeModel::class.java)
+                            .build()
 
-//                            holder.itemFabFilter.setOnClickListener {
-//                                generateFilterDialog(holder, collectionReference.whereIn("__name__", user.favorites!!))
-//                            }
-
-                            setSwipe(holder, firestoreRecyclerOptions)
-
-                            recipeAdapter = HomeFavRecipeAdapter(firestoreRecyclerOptions)
-                            holder.itemRecycler.layoutManager = GridLayoutManager(holder.itemRecycler.context, 2, LinearLayoutManager.VERTICAL, false)
-                            holder.itemRecycler.adapter = recipeAdapter
-                            recipeAdapter!!.startListening()
+                        holder.itemFabFilter.setOnClickListener {
+                            generateFilterDialog(holder, collectionReference.whereIn("__name__", user.favorites!!))
                         }
+
+                        setSwipe(holder, firestoreRecyclerOptions)
+
+                        recipeAdapter = HomeFavRecipeAdapter(firestoreRecyclerOptions)
+                        holder.itemRecycler.layoutManager = GridLayoutManager(holder.itemRecycler.context, 2, LinearLayoutManager.VERTICAL, false)
+                        holder.itemRecycler.adapter = recipeAdapter
+                        recipeAdapter!!.startListening()
                     }
+                }
         }
     }
 
-//    private fun generateFilterDialog(holder: Pager2ViewHolder, query: Query) {
-//        val dialog = Dialog(holder.itemFabFilter.context)
-//        dialog.setCancelable(true)
-//        dialog.setContentView(R.layout.dialog_filter)
-//        generateCheckButtons(dialog)
-//        dialog.findViewById<ImageView>(R.id.image_hide_filter).setOnClickListener {
-//            dialog.hide()
-//        }
-//        dialog.findViewById<Button>(R.id.filter_button).setOnClickListener {
-//            val generatedQuery = generateQuery(dialog, query)
-//            val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
-//                    .setQuery(generatedQuery, RecipeModel::class.java)
-//                    .build()
-//            recipeAdapter!!.updateOptions(firestoreRecyclerOptions)
-//            dialog.hide()
-//        }
-//        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-//        dialog.show()
-//    }
+    private fun generateFilterDialog(holder: Pager2ViewHolder, query: Query) {
+        val dialog = Dialog(holder.itemFabFilter.context)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.dialog_filter)
+        generateCheckButtons(dialog)
+        dialog.findViewById<ImageView>(R.id.image_hide_filter).setOnClickListener {
+            dialog.hide()
+        }
+        dialog.findViewById<Button>(R.id.filter_button).setOnClickListener {
+            val generatedQuery = generateQuery(dialog, query)
+            val firestoreRecyclerOptions = FirestoreRecyclerOptions.Builder<RecipeModel>()
+                .setQuery(generatedQuery, RecipeModel::class.java)
+                .build()
+            recipeAdapter!!.updateOptions(firestoreRecyclerOptions)
+            dialog.hide()
+        }
+        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.show()
+    }
 
     private fun generateCheckButtons(dialog: Dialog) {
-        val checkPrim: SwitchMaterial = dialog.findViewById(R.id.switchPrimary)
+//        SwitchCompat
+//        val checkPrim: SwitchMaterial = dialog.findViewById(R.id.switchPrimary)
+        val checkPrim: SwitchCompat = dialog.findViewById(R.id.switchPrimary)
         val radioGroupPrim: RadioGroup = dialog.findViewById(R.id.filter_radioGroup_primary)
 
-        val checkCat: SwitchMaterial = dialog.findViewById(R.id.switchCategory)
+        val checkCat: SwitchCompat = dialog.findViewById(R.id.switchCategory)
         val radioGroupCat: RadioGroup = dialog.findViewById(R.id.filter_radioGroup_category)
 
-        val checkDiet: SwitchMaterial = dialog.findViewById(R.id.switchDiet)
+        val checkDiet: SwitchCompat = dialog.findViewById(R.id.switchDiet)
         val radioGroupDiet: RadioGroup = dialog.findViewById(R.id.filter_radioGroup_diet)
 
-        val checkUtensils: SwitchMaterial = dialog.findViewById(R.id.switchUtensils)
+        val checkUtensils: SwitchCompat = dialog.findViewById(R.id.switchUtensils)
         val radioGroupUtensils: RadioGroup = dialog.findViewById(R.id.filter_radioGroup_utensils)
 
         initUtensilFilter(dialog, radioGroupUtensils)
@@ -208,27 +212,43 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
         }
     }
 
+    // Todo:  problem here
     private fun generateQuery(dialog: Dialog, query: Query): Query {
         var newQuery = query
 
+//        val checkPrim: SwitchMaterial = dialog.findViewById(R.id.switchPrimary)
         val checkPrim: SwitchMaterial = dialog.findViewById(R.id.switchPrimary)
-        val checkCat: SwitchMaterial = dialog.findViewById(R.id.switchCategory)
+        val checkCat: SwitchMaterial= dialog.findViewById(R.id.switchCategory)
         val checkDiet: SwitchMaterial = dialog.findViewById(R.id.switchDiet)
         val checkUtensil: SwitchMaterial = dialog.findViewById(R.id.switchUtensils)
 
         val filterPrimaries = dialog.findViewById<RadioGroup>(R.id.filter_radioGroup_primary)
 
+//        if(checkPrim.isChecked){
+//            for (i in 1 until filterPrimaries.childCount) {
+//
+//                val checkBox: RadioButton = filterPrimaries.getChildAt(i) as RadioButton
+//
+//                if(checkBox.isChecked){
+//                    newQuery = when (i) {
+//                        1 -> newQuery.orderBy("fav", Query.Direction.DESCENDING)
+//                        2 -> newQuery.orderBy("price", Query.Direction.ASCENDING)
+//                        else -> newQuery.orderBy("time", Query.Direction.ASCENDING)
+//                    }
+//                }
+//            }
+//        }
+
         if(checkPrim.isChecked){
-            for (i in 1 until filterPrimaries.childCount) {
-                val checkBox: CheckBox = filterPrimaries.getChildAt(i) as CheckBox
-                if(checkBox.isChecked){
-                    newQuery = when (i) {
-                        1 -> newQuery.orderBy("fav", Query.Direction.DESCENDING)
-                        2 -> newQuery.orderBy("price", Query.Direction.ASCENDING)
-                        else -> newQuery.orderBy("time", Query.Direction.ASCENDING)
-                    }
-                }
+
+            val checkedButton = filterPrimaries.checkedRadioButtonId
+
+            newQuery = when (checkedButton) {
+                1 -> newQuery.orderBy("fav", Query.Direction.DESCENDING)
+                2 -> newQuery.orderBy("price", Query.Direction.ASCENDING)
+                else -> newQuery.orderBy("time", Query.Direction.ASCENDING)
             }
+
         }
 
         val filterCategory = dialog.findViewById<RadioGroup>(R.id.filter_radioGroup_category)
@@ -270,10 +290,21 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
         return newQuery
     }
 
-    private fun setEnableRadioGroup(switchMaterial: SwitchMaterial, group: RadioGroup){
-        switchMaterial.setOnClickListener{
+
+//    SwitchCompat
+
+//    private fun setEnableRadioGroup(switchMaterial: SwitchMaterial, group: RadioGroup){
+//        switchMaterial.setOnClickListener{
+//            for (i in 0 until group.childCount) {
+//                group.getChildAt(i).isEnabled = switchMaterial.isChecked
+//            }
+//        }
+//    }
+
+    private fun setEnableRadioGroup(switchCompat: SwitchCompat, group: RadioGroup){
+        switchCompat.setOnClickListener{
             for (i in 0 until group.childCount) {
-                group.getChildAt(i).isEnabled = switchMaterial.isChecked
+                group.getChildAt(i).isEnabled = switchCompat.isChecked
             }
         }
     }
@@ -289,10 +320,10 @@ class ViewPagerAdapter : RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>
         }
     }
 
-//    private fun noRecipe(holder: Pager2ViewHolder) {
-//        holder.itemText.visibility = TextView.VISIBLE
-//        holder.itemFabFilter.visibility = FloatingActionButton.INVISIBLE
-//    }
+    private fun noRecipe(holder: Pager2ViewHolder) {
+        holder.itemText.visibility = TextView.VISIBLE
+        holder.itemFabFilter.visibility = FloatingActionButton.INVISIBLE
+    }
 
     fun startListening() {
         recipeAdapter?.startListening()

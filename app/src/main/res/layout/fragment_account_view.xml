@@ -49,36 +49,35 @@
         app:layout_constraintStart_toEndOf="@+id/image_view_acc"
         app:layout_constraintTop_toBottomOf="@+id/text_view_acc_name" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button_view_acc_sub"-->
-<!--        style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:background="@color/primaryColor"-->
-<!--        android:text="@string/button_subs"-->
-<!--        android:textColor="@color/primaryTextColor"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/separator_view_account"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/image_view_acc" />-->
+    <Button
+        android:id="@+id/button_view_acc_sub"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/primaryColor"
+        android:text="@string/button_subs"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_acc" />
 
-<!--    <Button-->
-<!--        android:id="@+id/button_view_acc_unsub"-->
-<!--        style="@style/Widget.MaterialComponents.Button.Icon"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:alpha="0.1"-->
-<!--        android:background="@color/secondaryColor"-->
-<!--        android:text="@string/button_unsubs"-->
-<!--        android:textColor="@color/primaryTextColor"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/image_view_acc"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/text_view_acc_desc" />-->
+    <Button
+        android:id="@+id/button_view_acc_unsub"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.1"
+        android:background="@color/secondaryColor"
+        android:text="@string/button_unsubs"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toEndOf="@+id/image_view_acc"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_acc_desc" />
 
     <TextView
         android:id="@+id/separator_view_account"
@@ -94,8 +93,8 @@
         android:id="@+id/text_view_acc_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
         android:text="@string/text_view_acc_recipe"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,7 +14,7 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
-import com.example.app.BuildConfig
+//import com.example.app.BuildConfig
 import com.example.app.R
 import com.firebase.ui.auth.AuthUI
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -47,65 +47,65 @@ class SettingsActivity : AppCompatActivity() {
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
-//            darkModeSetting()
-//            langSetting()
+            darkModeSetting()
+            langSetting()
             accountSetting()
 //            github()
             version()
         }
 
-//        private fun darkModeSetting() {
-//            val currentNightMode = (resources.configuration.uiMode
-//                    and Configuration.UI_MODE_NIGHT_MASK)
-//            val sharedPreferences = requireContext().getSharedPreferences("dark", 0)
-//
-//            val darkMode = findPreference<SwitchPreference>(getString(R.string.setting_dark))
-//
-//            darkMode?.isChecked = sharedPreferences.getBoolean("dark_mode", currentNightMode == Configuration.UI_MODE_NIGHT_YES)
-//
-//            darkMode?.setOnPreferenceChangeListener { _, newValue ->
-//                if (newValue as Boolean) {
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//                    sharedPreferences.edit().putBoolean("dark_mode", true).apply()
-//                    true
-//                } else {
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//                    sharedPreferences.edit().putBoolean("dark_mode", false).apply()
-//                    false
-//                }
-//            }
-//        }
+        private fun darkModeSetting() {
+            val currentNightMode = (resources.configuration.uiMode
+                    and Configuration.UI_MODE_NIGHT_MASK)
+            val sharedPreferences = requireContext().getSharedPreferences("dark", 0)
 
-//        @Suppress("DEPRECATION")
-//        private fun langSetting() {
-//            var lang = "ru"
-//            val configuration = Configuration(resources.configuration)
-//            if (configuration.locale.displayLanguage != "ru")
-//                lang = "en"
-//            val sharedPreferencesLang = requireContext().getSharedPreferences("lang", 0)
-//            val langSetting = sharedPreferencesLang.getString("lang", lang)
-//
-//            val listLang = findPreference<ListPreference>(getString(R.string.setting_lang))
-//            val sharedPreferences = requireContext().getSharedPreferences("lang", 0)
-//
-//            if (langSetting != "ru")
-//                listLang?.setValueIndex(0)
-//            else
-//                listLang?.setValueIndex(1)
-//
-//            listLang?.setOnPreferenceChangeListener { _, newValue ->
-//                if (newValue == resources.getStringArray(R.array.lang_array)[0]) {
-//                    configuration.locale = Locale.ENGLISH
-//                    sharedPreferences.edit().putString("lang", "en").apply()
-//                } else {
-//                    configuration.locale = Locale("ru")
-//                    sharedPreferences.edit().putString("lang", "ru").apply()
-//                }
-//                resources.updateConfiguration(configuration, resources.displayMetrics)
-//                startActivity(Intent(this.context, SettingsActivity::class.java))
-//                false
-//            }
-//        }
+            val darkMode = findPreference<SwitchPreference>(getString(R.string.setting_dark))
+
+            darkMode?.isChecked = sharedPreferences.getBoolean("dark_mode", currentNightMode == Configuration.UI_MODE_NIGHT_YES)
+
+            darkMode?.setOnPreferenceChangeListener { _, newValue ->
+                if (newValue as Boolean) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    sharedPreferences.edit().putBoolean("dark_mode", true).apply()
+                    true
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    sharedPreferences.edit().putBoolean("dark_mode", false).apply()
+                    false
+                }
+            }
+        }
+
+        @Suppress("DEPRECATION")
+        private fun langSetting() {
+            var lang = "ru"
+            val configuration = Configuration(resources.configuration)
+            if (configuration.locale.displayLanguage != "ru")
+                lang = "en"
+            val sharedPreferencesLang = requireContext().getSharedPreferences("lang", 0)
+            val langSetting = sharedPreferencesLang.getString("lang", lang)
+
+            val listLang = findPreference<ListPreference>(getString(R.string.setting_lang))
+            val sharedPreferences = requireContext().getSharedPreferences("lang", 0)
+
+            if (langSetting != "ru")
+                listLang?.setValueIndex(0)
+            else
+                listLang?.setValueIndex(1)
+
+            listLang?.setOnPreferenceChangeListener { _, newValue ->
+                if (newValue == resources.getStringArray(R.array.lang_array)[0]) {
+                    configuration.locale = Locale.ENGLISH
+                    sharedPreferences.edit().putString("lang", "en").apply()
+                } else {
+                    configuration.locale = Locale("ru")
+                    sharedPreferences.edit().putString("lang", "ru").apply()
+                }
+                resources.updateConfiguration(configuration, resources.displayMetrics)
+                startActivity(Intent(this.context, SettingsActivity::class.java))
+                false
+            }
+        }
 
         private fun accountSetting() {
             val account = findPreference<Preference>(getString(R.string.setting_account))
