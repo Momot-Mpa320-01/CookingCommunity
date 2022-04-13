@@ -94,7 +94,7 @@ class RecipeFragment : Fragment() {
 //                    .setMessage(getString(R.string.alert_report_message, recipe.name))
 //                    .setPositiveButton(android.R.string.ok) { _, _ ->
 //                        val send = Intent(Intent.ACTION_SENDTO)
-//                        send.data = Uri.parse("mailto:studecook@gmail.com")
+//                        send.data = Uri.parse("mailto:xxx@gmail.com")
 //                        send.putExtra(Intent.EXTRA_SUBJECT, "Signalement")
 //                        send.putExtra(Intent.EXTRA_TEXT, "Nom = ${recipe.name}")
 //                        startActivity(send)
@@ -113,10 +113,10 @@ class RecipeFragment : Fragment() {
                 android.R.layout.simple_spinner_item
         ).also { arrayAdapter ->
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//            root.spinner_nb.adapter = arrayAdapter
-//            root.spinner_nb.setSelection(
-//                    recipe.number!! - 1
-//            )
+            root.spinner_nb.adapter = arrayAdapter
+            root.spinner_nb.setSelection(
+                    recipe.number!! - 1
+            )
         }
 
         root.spinner_nb.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
