@@ -38,10 +38,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filter_title">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchPrimary"
+                style="Widget.MaterialComponents.CompoundButton.Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:checked="true"
+                app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_primary"
+                app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_primary" />
 
             <RadioGroup
                 android:id="@+id/filter_radioGroup_primary"
@@ -69,15 +80,6 @@
                     android:text="@string/filter_fav"
                     android:padding="8dp" />
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switchPrimary"
-                    style="Widget.MaterialComponents.CompoundButton.Switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="32dp"
-                    android:checked="true" />
-
                 <CheckBox
                     android:id="@+id/filter_check_cheap"
                     android:layout_width="match_parent"
@@ -94,9 +96,80 @@
 
             </RadioGroup>
 
+
+
+
+
+
+
+<!--            <com.google.android.material.switchmaterial.SwitchMaterial-->
+<!--                android:id="@+id/switchPrimary"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                />-->
+
+<!--            <RadioGroup-->
+<!--                android:id="@+id/filter_radioGroup_primary"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginTop="32dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="parent">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/filter_primary_title"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:text="@string/text_type"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/filter_check_fav"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:checked="true"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:text="@string/filter_starter" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/filter_check_cheap"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:text="@string/filter_dish" />-->
+
+<!--                <RadioButton-->
+<!--                    android:id="@+id/filter_check_fast"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:text="@string/filter_dessert" />-->
+
+<!--            </RadioGroup>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--            style="Widget.MaterialComponents.CompoundButton.Switch"-->
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchCategory"
-                style="Widget.MaterialComponents.CompoundButton.Switch"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -104,6 +177,16 @@
                 android:checked="true"
                 app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_category"
                 app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_category" />
+
+<!--            <Switch-->
+<!--                android:id="@+id/switchCategory"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                android:checked="true"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_category"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_category" />-->
 
             <RadioGroup
                 android:id="@+id/filter_radioGroup_category"
@@ -155,9 +238,10 @@
 
             </RadioGroup>
 
+<!--            style="Widget.MaterialComponents.CompoundButton.Switch"-->
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchDiet"
-                style="Widget.MaterialComponents.CompoundButton.Switch"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -165,6 +249,17 @@
                 android:checked="true"
                 app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_diet"
                 app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_diet" />
+
+
+<!--            <Switch-->
+<!--                android:id="@+id/switchDiet"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                android:checked="true"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_diet"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_diet" />-->
 
             <RadioGroup
                 android:id="@+id/filter_radioGroup_diet"
@@ -209,9 +304,10 @@
 
             </RadioGroup>
 
+<!--            style="Widget.MaterialComponents.CompoundButton.Switch"-->
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switchUtensils"
-                style="Widget.MaterialComponents.CompoundButton.Switch"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -219,6 +315,17 @@
                 android:checked="true"
                 app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_utensils"
                 app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_utensils" />
+
+
+<!--            <Switch-->
+<!--                android:id="@+id/switchUtensils"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+<!--                android:checked="true"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/filter_radioGroup_utensils"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/filter_radioGroup_utensils" />-->
 
             <RadioGroup
                 android:id="@+id/filter_radioGroup_utensils"
